@@ -63,7 +63,7 @@ def send_message(rid, message):
         r = requests.post(GRAPH_API_URL, params={"access_token": PAGE_ACCESS_TOKEN}, json={"recipient": {"id": rid}, "message": message}, timeout=10)
         r.raise_for_status()
         return True
-    except:
+    except Exception:
         return False
 
 def handle_event(event):
