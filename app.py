@@ -1,6 +1,5 @@
 import logging
 import os
-from typing import Any, Dict, Iterable, Optional
 import requests
 from flask import Flask, jsonify, request
 
