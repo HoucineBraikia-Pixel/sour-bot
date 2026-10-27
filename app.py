@@ -63,7 +63,7 @@ def send_message(rid, message):
         r = requests.post(GRAPH_API_URL, params={"access_token": PAGE_ACCESS_TOKEN}, json={"recipient": {"id": rid}, "message": message}, timeout=10)
         r.raise_for_status()
         return True
-    except Exception:
+    except:
         return False
 
 def handle_event(event):
@@ -92,7 +92,7 @@ def handle_event(event):
 
 @app.get("/")
 def health():
-    return jsonify({"status": "ok"})
+    return jsonify({"status": "ok", "service": "Facebook Messenger bot"})
 
 @app.get("/webhook")
 def verify():
